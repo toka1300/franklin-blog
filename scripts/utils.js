@@ -670,30 +670,12 @@ function decorateLinks(main) {
       }
 
       const isContactLink = ['tel:', 'mailto:', 'sms:'].includes(url.protocol);
-      const isAdobeOwnedLinks = [
-        'adobesparkpost.app.link',
-        'new.express.adobe.com',
-        'express.adobe.com',
-        'adobe.com',
-        'www.adobe.com',
-        'www.stage.adobe.com',
-        'commerce.adobe.com',
-        'commerce-stg.adobe.com',
-        'helpx.adobe.com',
-      ].includes(url.hostname);
 
       if (!isContactLink) {
         // make url relative if needed
         const relative = url.hostname === window.location.hostname;
         const urlPath = `${url.pathname}${url.search}${url.hash}`;
         a.href = relative ? urlPath : `${url.origin}${urlPath}`;
-
-        if ((!relative && !isAdobeOwnedLinks && !a.href.includes('#_self')) || (a.href.includes('#_blank'))) {
-          // open external links in a new tab
-          a.target = '_blank';
-        }
-        if (a.href.includes('#_blank')) a.href = a.href.replace('#_blank', '');
-        if (a.href.includes('#_self')) a.href = a.href.replace('#_self', '');
       }
       if (a.href.includes('#_dnb')) {
         a.href = a.href.replace('#_dnb', '');
