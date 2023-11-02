@@ -1,3 +1,7 @@
+.columns.marquee {
+  display: flex;
+}
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -19,7 +23,23 @@
   display: block;
 }
 
+.columns.marquee h1 {
+  font-size: var(--heading-font-size-xl);
+}
+
+.columns.marquee h1:first-of-type{
+  margin-bottom: 0;
+}
+
+.columns.marquee h1:nth-of-type(2){
+  margin-top: 0;
+}
+
 @media (min-width: 900px) {
+  .columns.marquee h1 {
+    font-size: var(--heading-font-size-xxl);
+  }
+
   .columns > div {
     align-items: center;
     flex-direction: unset;
@@ -29,5 +49,11 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+@media (min-width: 1189px) {
+  .columns-container {
+    margin-top: 86px;
   }
 }

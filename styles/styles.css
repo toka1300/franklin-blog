@@ -12,8 +12,8 @@
 
  :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
+  --link-color: #0081CE;
+  --link-hover-color: #0082cee9;
   --background-color: #fff;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
@@ -356,6 +356,11 @@ main img {
 
 main .section {
   padding: 64px 16px;
+}
+
+.button-container .icon {
+  vertical-align: middle;
+  margin: -0.25rem 0 0 0.5rem;
 }
 
 @media (min-width: 600px) {
